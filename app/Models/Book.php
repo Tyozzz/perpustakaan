@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Book extends Model
+class CreateBooksTable extends Migration
 {
     public function up()
     {
@@ -17,7 +17,9 @@ class Book extends Model
             $table->timestamps();
         });
     }
-    
+
+    public function down()
+    {
+        Schema::dropIfExists('books');
+    }
 }
-
-
